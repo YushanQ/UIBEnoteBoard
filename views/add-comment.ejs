@@ -1,0 +1,15 @@
+<%- include("header") %>
+
+<form class="add-comment-box" action="/add-comment" method="post">
+    <div class="form-group">
+      <label for="">姓名：</label>
+      <input class="form-control" type="text" name="userName" value="">
+
+      <label for="">内容：</label>
+      <textarea class="form-control" name="userComment" rows="5" cols="30"></textarea>
+
+    </div>
+    <button type="submit" class="btn btn-primary" name="button">提交</button>
+</form>
+
+<%-  include("footer") %>

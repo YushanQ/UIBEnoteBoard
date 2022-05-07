@@ -1,0 +1,69 @@
+<%- include("header") %>
+
+<!-- This section for title image -->
+<div class="title-img" style="padding:15px">
+  <img
+    src="https://tse1-mm.cn.bing.net/th/id/R-C.7019498ee71e3cbb3962c7ba5caf32f1?rik=UzhJF3dFAmDZTw&riu=http%3a%2f%2fpic.gerenjianli.com%2fxiaohui2046%2fb153.jpg&ehk=BBpkh4B06yrV7wVtvkbxzQdb%2fDTbKlhCxpPsG%2bTkpro%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+    alt="" width="200px">
+</div>
+
+<!-- Button trigger modal -->
+<div class="comment-add">
+  <h1 style="padding-bottom: 10px;">Add your comment here!</h1>
+  <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#loginVarify">
+    Add your comment here!
+  </button>
+</div>
+
+<!-- This section is for comment card -->
+<div class="row">
+  <% comments.forEach(function(comment){ %>
+  <div class="comment-box col-lg-4 col-md-6">
+    <div class="card h-100" style="width: 18rem;">
+      <img src="/images/cat.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= comment.userName %></h5>
+        <p class="card-text"><%= comment.content %></p>
+      </div>
+    </div>
+  </div>
+  <% }); %>
+</div>
+
+<!-- <div class="comment-box col-lg-4 col-md-6">
+        <div class="card h-100" style="width: 18rem;">
+          <img src="/images/cat.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">User 2</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+
+    <!- This is the modal for login -->
+<div class="modal fade" id="loginVarify" tabindex="-1" aria-labelledby="loginVarifyLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginVarifyLabel">Hi, 我们需要先验证你的身份</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="" action="/login" method="post">
+          <div class="form-group row">
+            <label for="lq1" class="col-sm-8 col-form-label">我校的正态分布线是____分？</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="quizAns" id="lq1" placeholder="两位数字" required="required">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-link btn-lg mb-3" style="margin-left:40%">提交</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<%-  include("footer") %>
