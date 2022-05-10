@@ -55,6 +55,6 @@ app.post("/add-comment",function(req,res){
   });
 });
 
-app.listen(3100, function() {
+app.listen(80,'0.0.0.0', function() {
   console.log("Server started on port 3100");
 });
