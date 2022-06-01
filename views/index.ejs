@@ -1,0 +1,231 @@
+<%- include("header") %>
+
+<!-- This section for title image -->
+<<<<<<< HEAD
+<div class="title-img" style="padding:15px">
+  <img
+    src="https://tse1-mm.cn.bing.net/th/id/R-C.7019498ee71e3cbb3962c7ba5caf32f1?rik=UzhJF3dFAmDZTw&riu=http%3a%2f%2fpic.gerenjianli.com%2fxiaohui2046%2fb153.jpg&ehk=BBpkh4B06yrV7wVtvkbxzQdb%2fDTbKlhCxpPsG%2bTkpro%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+    alt="" width="200px">
+</div>
+
+<!-- Button trigger modal -->
+<div class="comment-add">
+  <h1 style="padding-bottom: 10px;">Add your comment here!</h1>
+  <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#loginVarify">
+    Add your comment here!
+  </button>
+</div>
+
+<!-- This section is for comment card -->
+<div class="row">
+  <% comments.forEach(function(comment){ %>
+  <div class="comment-box col-lg-4 col-md-6">
+    <div class="card h-100" style="width: 18rem;">
+      <img src="/images/cat.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= comment.userName %></h5>
+        <p class="card-text"><%= comment.content %></p>
+      </div>
+    </div>
+=======
+<div class="title-img">
+  <img src="/images/logo.jpg" alt="" width="200px" />
+</div>
+
+<!-- 触发身份验证 -->
+<div class="comment-add">
+  <h1 style="font-size: 80px;">留言板</h1>
+  <br/>
+  <button type="button" class="btn-cmt-add" data-bs-toggle="modal" data-bs-target="#loginVarify">
+    我想说点！
+  </button>
+</div>
+<br />
+
+<!-- 展示留言板 -->
+<div class="row">
+  <% comments.forEach(function(comment){ %>
+
+  <div class="comment-box col-lg-4 col-md-6">
+    <a href="/posts/<%= comment.id %>" style="color: black; text-decoration: none">
+      <div class="card h-100">
+        <img
+          src="https://tse1-mm.cn.bing.net/th/id/R-C.80f0d6d3b2140698e6d7c458f2767fde?rik=TgZT7FRtVMCgQQ&riu=http%3a%2f%2fpic.22520.cn%2fup%2f200710%2f1594389917147857.jpeg&ehk=UOwbFmc8Gc0SOnBQDSfe38%2bmfnISjbY0I3W%2b%2bKOmC0I%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+          class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= comment.userName %></h5>
+          <p class="card-text"><%= comment.userComment %></p>
+        </div>
+        <div class="like-func">
+          <div class="like-botton" data-key="<%= comment.id %>"></div>
+          <div class="like-total" data-key="<%= comment.id %>" id="like-total-<%= comment.id %>"></div>
+        </div>
+      </div>
+    </a>
+>>>>>>> test
+  </div>
+  <% }); %>
+</div>
+
+<<<<<<< HEAD
+<!-- <div class="comment-box col-lg-4 col-md-6">
+        <div class="card h-100" style="width: 18rem;">
+          <img src="/images/cat.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">User 2</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+
+    <!- This is the modal for login -->
+=======
+<!-- 身份验证问题 -->
+>>>>>>> test
+<div class="modal fade" id="loginVarify" tabindex="-1" aria-labelledby="loginVarifyLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginVarifyLabel">Hi, 我们需要先验证你的身份</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="" action="/login" method="post">
+<<<<<<< HEAD
+          <div class="form-group row">
+            <label for="lq1" class="col-sm-8 col-form-label">我校的正态分布线是____分？</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="quizAns" id="lq1" placeholder="两位数字" required="required">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-link btn-lg mb-3" style="margin-left:40%">提交</button>
+=======
+          <% var rand_num = Math.round(Math.random()*4); %> <% if (rand_num ===
+          1){ %>
+          <div class="form-group row">
+            <label for="lq1" class="col-sm-8 col-form-label">我校的正态分布线是____分？</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="lq1" id="lq1" placeholder="两位数字" required="required" />
+            </div>
+          </div>
+          <% } else { %>
+          <div class="form-group row">
+            <label for="lq2" class="col-sm-8 col-form-label">站在____上，可以从东门望到西门？</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="lq2" id="lq2" placeholder="路名" required="required" />
+            </div>
+          </div>
+          <% } %>
+          <button type="submit" class="btn btn-link btn-lg mb-3" style="
+          margin-left: 38%;
+          color: black;
+          text-decoration: none">
+            提交
+          </button>
+>>>>>>> test
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<<<<<<< HEAD
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<%-  include("footer") %>
+=======
+<!-- <style>
+  .liked {
+    background-size: 100% 100% !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    width: 38px;
+    height: 50px;
+    background-image: url(http://localhost:3100/images/like.png);
+  }
+</style> -->
+
+<!-- 点赞 -->
+<script>
+  // 生成唯一的uuid
+  function getUUID() {
+    return Math.random().toString(16).slice(2);
+  }
+  // 生成一次id，并且保存到 localStorage
+  var uuid = localStorage.getItem('uuid');
+  if (!uuid) {
+    var uuid = localStorage.setItem('uuid', getUUID());
+    localStorage.setItem(uuid);
+  }
+
+  // 获取所有文章的点赞总数，并更新页面上的dom
+  function getLikeToal() {
+    fetch('/likes-by-blog')
+      .then((response) => response.json())
+      .then((list) => {
+        var likeTotal = document.querySelectorAll('.like-total');
+        likeTotal.forEach(dom => {
+          var match = list.find(i => i.blogId === dom.dataset.key)
+          console.log(
+            match, list
+          )
+          if (match) {
+            dom.innerHTML = `${match.total}`
+          } else {
+            dom.innerHTML = ``
+          }
+        })
+      });
+  }
+  getLikeToal();
+
+  var btns = document.querySelectorAll('.like-botton');
+
+  // 获取我点赞的文章
+  fetch(`/likes?userId=${uuid}`, {
+      method: 'GET'
+    })
+    .then((response) => response.json())
+    .then((results) => {
+      btns.forEach((btn) => {
+        var isLiked = results.find((i) => i.blogId === btn.dataset.key);
+        if (isLiked) {
+          btn.classList.add('liked');
+        }
+      });
+    });
+
+  // 点赞/取消点赞
+  btns.forEach((btn) => {
+    btn.addEventListener('click', function(e) {
+      var dataset = e.target.dataset;
+      if (dataset.key) {
+        var isLiked = btn.className.includes('liked');
+        fetch(isLiked ? 'remove-like' : '/add-like', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            blogId: dataset.key,
+            userId: uuid
+          }),
+        }).then(() => {
+          if (isLiked) {
+            btn.classList.remove('liked');
+          } else {
+            btn.classList.add('liked');
+          }
+          getLikeToal();
+        });
+      }
+      e.preventDefault();
+    });
+  });
+</script>
+
+<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<%- include("footer") %>
+>>>>>>> test
