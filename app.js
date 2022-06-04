@@ -1,48 +1,15 @@
 const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
-<<<<<<< HEAD
-const mongoose = require("mongoose");
-=======
 const cookieParser = require("cookie-parser");
 const mysql = require("mysql");
 const moment = require("moment");
 // const session = require("express-session")
->>>>>>> test
 
 const app = express();
 
 app.set('view engine', 'ejs');
 
-<<<<<<< HEAD
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-
-mongoose.connect("mongodb+srv://admin:UIBE12345@cluster0.cc6kc.mongodb.net/blogDB",{useNewUrlParser: true});
-
-const commentSchema = {
-  userName: String,
-  content: String,
-  random: String
-};
-
-const Comments = mongoose.model("Post",commentSchema)
-
-const loginquizes = {"lq1":"85"};
-
-app.get("/", function(req, res){
-  rand = Math.random()
-  Comments.find({random:{$gte : rand}}, function(err, comments){
-    res.render("index",{
-      comments: comments
-    });
-  }).limit(10);
-});
-
-app.post("/login", function(req, res){
-  const ans = req.body.quizAns;
-  if (ans === loginquizes['lq1']){
-=======
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -108,7 +75,6 @@ app.post("/login", function(req, res){
   if (ans === loginquizes[id]){
     // req.session.username = 'guest' + Math.round((Math.random()*9+1)*10000)
     // console.log(req.session)
->>>>>>> test
     res.render("add-comment");
   }else{
     res.end('wooooooo WRONGGGGGGGG!');
@@ -117,22 +83,6 @@ app.post("/login", function(req, res){
 
 // this is to store comment data
 app.post("/add-comment",function(req,res){
-<<<<<<< HEAD
-  const comment = new Comments({
-    userName: req.body.userName,
-    content: req.body.userComment,
-    random: Math.random()
-  });
-
-  comment.save(function(err){
-    if (!err){
-      res.redirect("/");
-    }
-  });
-});
-
-app.listen(80,'0.0.0.0', function() {
-=======
   let sqlStr = "insert into blogdb(userName, userEmail, userComment, date, presentStatus) values(?,?,?,?,?)"
   let params = [
       req.body.userName,
@@ -205,6 +155,5 @@ app.get("/likes-by-blog",function(req,res){
 
 
 app.listen(3100, function() {
->>>>>>> test
   console.log("Server started on port 3100");
 });

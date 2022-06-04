@@ -1,8 +1,4 @@
 body, html{
-<<<<<<< HEAD
-  background: url('https://img.zcool.cn/community/01a20b5c866ffca80120af9a306ef2.jpg@1280w_1l_2o_100sh.jpg') no-repeat top fixed;
-  height: 100%;
-=======
   background: url('/images/website2.jpg') no-repeat top fixed;
   background-size: cover;
   font-family:"Noto Sans SC"
@@ -15,7 +11,6 @@ body, html{
 .container{
   padding: 0 5%;
   min-height: calc(100vh - 60px);
->>>>>>> test
 }
 
 .comment-add{
@@ -23,25 +18,6 @@ body, html{
   margin-bottom: 30px;
 }
 
-<<<<<<< HEAD
-.container{
-  padding: 0 100px;
-  min-height: calc(100vh - 24px);
-}
-.comment-box{
-  padding: 2% 5%;
-}
-
-.footer{
-  bottom: 0;
-  width: 100%;
-  background-color: #5d8aa8;
-  text-align: center;
-}
-
-.footer-text{
-  margin-bottom: 0;
-=======
 .btn-cmt-add{
   font-size: 20px;
   font-weight: 400;
@@ -134,19 +110,10 @@ body, html{
   margin-bottom: 10%;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.08) 0 4px 12px;
->>>>>>> test
 }
 
 .add-comment-box{
   margin: 0 auto;
-<<<<<<< HEAD
-  position: relative;
-  top: 200px;
-  padding: 25px 15px 25px 10px;
-  max-width: 500px;
-  background: #F7F7F7;
-  border: 1px solid #E4E4E4;
-=======
   padding-top: 9%;
   max-width: 500px;
   background: #fff;
@@ -242,5 +209,4 @@ body, html{
 .footer p{
   padding-top: 20px;
   color:#000
->>>>>>> test
 }
