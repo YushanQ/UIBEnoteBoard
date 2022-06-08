@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mysql = require("mysql");
 const moment = require("moment");
-// const session = require("express-session")
 
 const app = express();
 
@@ -13,12 +12,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+app.use(express.static("node_modules"));
 app.use(cookieParser());
-// app.use(session({
-//   secret:'keyboard cat',
-//   resave:false,
-//   saveUninitialized: true
-// }))
 
 //连接mysql
 const connection=mysql.createConnection({
