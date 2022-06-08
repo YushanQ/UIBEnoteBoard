@@ -6,15 +6,31 @@ This project is served as a comment board for Business School 2022 graduation pa
 <hr>
 <h4> How to access? </h4>
 <li> Online </li>
-You can access the website [here](http://59.110.112.17:3100/)
+You can access the website <a href="http://59.110.112.17:3100/">here</a>
 <br>
 (This link will be expired on 2022.7.5)
 <br>
 <br>
-<li>local</li>
-Firstly, you should clone this website to your pc
-···
-git clone 
+<li>Local</li>
+Firstly, download to your pc
+<br>
+    git clone (github address)
+    cd (the cloned files)
+    nodemon app.js
+Then you can start the project on localhost:3100.
+<br>
+Please remember. You should install git and node.js on your pc before clone this project
+Secondly, if you would like to deploy it to another address：
+<br>
+    ssh \[username]@\[ip]
+    git clone (github address)
+    cd (the cloned files)
+    npm i
+    pm2 delete all
+    pm2 start app.js --name=app
+and update via:
+    git pull
+    pm2 restart all
 
 
 
